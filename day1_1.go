@@ -29,10 +29,12 @@ func main() {
 Mainloop:
 	for _, line := range txtlines {
 		for _, line2 := range txtlines {
-			if line+line2 == 2020 {
-				fmt.Printf("Found %d %d\n", line, line2)
+			for _, line3 := range txtlines {
+			if line+line2+line3 == 2020 {
+				fmt.Printf("Found %d %d %d... Product %d\n", line, line2, line3, line * line2 * line3)
 				break Mainloop
 			}
+		}
 		}
 	}
 }
